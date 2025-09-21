@@ -1,0 +1,37 @@
+<section
+  id="emotion-support"
+  class="py-16 sm:py-20 dark:bg-[#262626]/50 bg-[#f5f5f5]/50"
+  aria-labelledby="emotion-support-title"
+>
+  <div class="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div
+      data-slot="card"
+      class="text-card-foreground flex flex-col gap-6 rounded-xl py-6 bg-background/80 shadow-lg border-0"
+    >
+      <div
+        data-slot="card-header"
+        class="px-6 flex flex-row items-center gap-4 pb-2"
+      >
+        <div
+          class="bg-primary/10 p-3 rounded-lg flex items-center justify-center"
+        >
+          <ng-icon name="lucideHeart" class="!size-5.5"></ng-icon>
+        </div>
+        <div data-slot="card-title" class="leading-none font-semibold">
+          <h2
+            id="emotion-support-title"
+            class="text-2xl font-bold tracking-tight"
+          >
+            Emotion Support
+          </h2>
+        </div>
+      </div>
+      <div data-slot="card-content" class="px-6">
+        <p class="text-lg text-muted-foreground font-medium">
+          Bring your audio to life with expressive emotion controls. Choose from
+          a range of emotions to match your message.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

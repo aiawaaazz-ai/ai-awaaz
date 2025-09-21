@@ -1,0 +1,92 @@
+<section id="demo" class="py-20 sm:py-24">
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Try It Yourself
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Experience the quality of AI Awaaz firsthand.
+      </p>
+    </div>
+    <div
+      data-slot="card"
+      class="bg-card dark:bg-[#171717] text-card-foreground flex flex-col gap-6 rounded-xl border border-[#FFFFFF19] py-6 shadow-sm overflow-hidden"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-8">
+          <h3 class="text-xl font-semibold mb-4">Try Text to Speech</h3>
+          <div class="space-y-4">
+            <textarea
+              class="w-full p-4 bg-muted size-full resize-none"
+              hlmInput
+              placeholder="Enter some text to generate speech..."
+              rows="2"
+              [(ngModel)]="text"
+              name="text"
+              maxlength="100"
+            >
+Hello, welcome to AI Awaaz. Experience the future of voice technology.
+        </textarea
+            >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <hlm-select
+                class="inline-block"
+                placeholder="Select an option"
+                [(value)]="language"
+                scrollable="true"
+                id="emotion"
+              >
+                <hlm-select-trigger class="w-full">
+                  <hlm-select-value />
+                </hlm-select-trigger>
+                <hlm-select-content class="max-h-92">
+                  <hlm-select-scroll-up />
+                  @for(emotion of languages; track emotion){
+                  <hlm-option [value]="emotion">{{ emotion }}</hlm-option> }
+                  <hlm-select-scroll-down />
+                </hlm-select-content>
+              </hlm-select>
+              <hlm-select
+                class="inline-block"
+                placeholder="Select an option"
+                [(value)]="voice"
+                scrollable="true"
+                id="emotion"
+              >
+                <hlm-select-trigger class="w-full">
+                  <hlm-select-value />
+                </hlm-select-trigger>
+                <hlm-select-content class="max-h-92">
+                  <hlm-select-scroll-up />
+                  @for(emotion of voices; track emotion){
+                  <hlm-option [value]="emotion">{{ emotion }}</hlm-option> }
+                  <hlm-select-scroll-down />
+                </hlm-select-content>
+              </hlm-select>
+            </div>
+            <button hlmBtn class="w-full">
+              <ng-icon name="lucidePlay" class="mr-2"></ng-icon>
+              Generate &amp; Play
+            </button>
+          </div>
+        </div>
+        <app-wave-visualizer />
+      </div>
+    </div>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+      <button
+        hlmBtn
+        variant="outline"
+        class="dark:bg-[#FFFFFF26]/30 dark:hover:bg-[#FFFFFF26]/50 dark:border-[#FFFFFF19]"
+      >
+        Try Voice Cloning</button
+      ><button
+        hlmBtn
+        variant="outline"
+        class="dark:bg-[#FFFFFF26]/30 dark:hover:bg-[#FFFFFF26]/50 dark:border-[#FFFFFF19]"
+      >
+        Try Speech to Text
+      </button>
+    </div>
+  </div>
+</section>

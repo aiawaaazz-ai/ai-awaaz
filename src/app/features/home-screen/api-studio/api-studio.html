@@ -1,0 +1,83 @@
+<section id="api" class="py-20 sm:py-24 dark:bg-[#262626]/50 bg-[#f5f5f5]/50">
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div
+        data-slot="card"
+        class="bg-card dark:bg-[#171717] text-card-foreground flex flex-col gap-6 rounded-xl border border-border py-6 shadow-sm overflow-hidden"
+      >
+        <div data-slot="card-header" class="flex flex-col gap-1.5 px-6">
+          <div class="flex items-center gap-3">
+            <ng-icon name="lucideCode" class="!h-6 !w-6"></ng-icon>
+            <div data-slot="card-title" class="leading-none font-semibold">
+              Powerful API for Developers
+            </div>
+          </div>
+        </div>
+        <div data-slot="card-content" class="px-6">
+          <p class="text-muted-foreground mb-4">
+            Integrate realistic voice generation into your applications with a
+            few lines of code.
+          </p>
+          <div
+            class="bg-[#f8fafc] dark:bg-background rounded-lg p-4 font-mono text-sm overflow-x-auto"
+          >
+            <pre><code ><span class="text-purple-400" >const</span> response = <span class="text-yellow-400" >await</span> <span class="text-blue-400" >fetch</span>(<br >  'https://api.aiawaaz.com/v1/tts', {{'{'}}<br >    method: <span class="text-green-400" >'POST'</span>,<br >    headers: {{'{'}} 'Authorization': <span class="text-green-400" >{{"`Bearer ${API_KEY}`"}}</span> {{'}'}},<br >    {{'body: JSON.stringify({...})'}}<br >  {{'}'}});</code></pre>
+          </div>
+        </div>
+        <div data-slot="card-footer" class="flex items-center px-6">
+          <button
+            hlmBtn
+            variant="outline"
+            class="dark:bg-[#FFFFFF26]/30 dark:hover:bg-[#FFFFFF26]/50 dark:border-[#FFFFFF19]"
+            routerLink="/api-docs"
+          >
+            Explore API Docs
+          </button>
+        </div>
+      </div>
+      <div
+        data-slot="card"
+        class="bg-card dark:bg-[#171717] text-card-foreground flex flex-col gap-6 rounded-xl border border-border py-6 shadow-sm overflow-hidden"
+      >
+        <div data-slot="card-header" class="flex flex-col gap-1.5 px-6">
+          <div class="flex items-center gap-3">
+            <ng-icon name="lucideClapperboard" class="!h-6 !w-6"></ng-icon>
+            <div data-slot="card-title" class="leading-none font-semibold">
+              AI Awaaz Studio
+            </div>
+          </div>
+        </div>
+        <div data-slot="card-content" class="px-6">
+          <p class="text-muted-foreground">
+            An advanced editor for fine-tuning voice performances. Control
+            pitch, pacing, and emotion to create the perfect delivery for your
+            projects.
+          </p>
+          <div
+            class="mt-4 flex items-center justify-center bg-[#f8fafc] dark:bg-background rounded-lg p-4"
+          >
+            <ng-icon
+              class="!h-10 !w-10 !text-muted-foreground mx-2"
+              name="lucideUsers"
+            ></ng-icon>
+            <ng-icon
+              class="!h-10 !w-10 !text-muted-foreground mx-2"
+              name="lucideMessageSquare"
+            ></ng-icon>
+            <ng-icon
+              class="!h-10 !w-10 !text-muted-foreground mx-2"
+              name="lucideHeart"
+            ></ng-icon>
+            <ng-icon
+              class="!h-10 !w-10 !text-muted-foreground mx-2"
+              name="lucideShare2"
+            ></ng-icon>
+          </div>
+        </div>
+        <div data-slot="card-footer" class="flex items-center px-6">
+          <button hlmBtn>Explore Studio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

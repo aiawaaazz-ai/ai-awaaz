@@ -1,0 +1,52 @@
+<section id="testimonials" class="py-20 sm:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 dark:opacity-[0.02]">
+    <div
+      class="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)] bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:3rem_3rem]"
+    ></div>
+  </div>
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Loved by Creators Worldwide
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Don't just take our word for it.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      @for(testimony of data; track testimony.author){
+
+      <div>
+        <div
+          data-slot="card"
+          class="bg-card dark:bg-[#171717] text-card-foreground gap-6 rounded-xl border border-border py-6 shadow-sm h-full flex flex-col"
+        >
+          <div data-slot="card-content" class="px-6 pt-6 flex-grow">
+            <blockquote class="text-muted-foreground">
+              "{{testimony.quote}}"
+            </blockquote>
+          </div>
+          <div
+            data-slot="card-footer"
+            class="px-6 mt-4 flex items-center gap-4"
+          >
+            <span
+              data-slot="avatar"
+              class="relative flex size-8 shrink-0 overflow-hidden rounded-full"
+              ><img
+                data-slot="avatar-image"
+                class="aspect-square size-full"
+                [alt]="testimony.author"
+                [src]="testimony.avatar_src"
+            /></span>
+            <div>
+              <p class="font-semibold">{{testimony.author}}</p>
+              <p class="text-sm text-muted-foreground">{{testimony.title}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

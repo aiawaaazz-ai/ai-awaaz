@@ -1,0 +1,48 @@
+<section
+  id="features"
+  class="py-20 sm:py-24 dark:bg-[#262626]/50 bg-[#f5f5f5]/50"
+>
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Core Features
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Everything you need to create with voice.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for(feature of features; track feature.title){
+      <div>
+        <div
+          data-slot="card"
+          class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-border py-6 shadow-sm h-full overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1"
+        >
+          <div
+            data-slot="card-header"
+            class="px-6 flex flex-row items-center gap-4"
+          >
+            <div
+              class="bg-primary/10 p-3 rounded-lg size-12 flex items-center justify-center"
+            >
+              <ng-icon name="{{feature.icon}}" class="!size-5.5"></ng-icon>
+            </div>
+            <div data-slot="card-title" class="leading-none font-semibold">
+              {{feature.title}}
+            </div>
+          </div>
+          <div data-slot="card-content" class="px-6">
+            <p class="text-muted-foreground">{{feature.description}}</p>
+          </div>
+          <div data-slot="card-footer" class="flex items-center px-6">
+            <button hlmBtn variant="link">
+              Learn More
+              <ng-icon name="lucideArrowRight" class="ml-2"></ng-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

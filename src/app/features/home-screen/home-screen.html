@@ -1,0 +1,56 @@
+<app-headers />
+<main>
+  <section id="hero" class="py-20 sm:py-28 lg:py-32 text-center">
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl">
+        Your Voice, Amplified by AI.
+      </h1>
+      <p
+        class="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground sm:text-xl"
+      >
+        Text to Speech, Voice Cloning, and Speech to Text in one seamless
+        platform.
+      </p>
+      <div
+        class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
+        <button hlmBtn>Try for Free</button
+        ><button hlmBtn variant="link" routerLink="/pricing">
+          See Pricing
+          <ng-icon name="lucideArrowRight" class="ml-2"></ng-icon>
+        </button>
+      </div>
+      <div class="mt-16">
+        <div class="relative w-full max-w-3xl mx-auto">
+          <div
+            class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+          <div class="relative grid grid-cols-5 sm:grid-cols-8 gap-4">
+            @for(image of usersImage; track image){
+            <div style="transform: none">
+              <span
+                data-slot="avatar"
+                class="relative flex size-8 shrink-0 overflow-hidden rounded-full h-16 w-16 border-4 border-background"
+                ><img
+                  data-slot="avatar-image"
+                  class="aspect-square size-full"
+                  alt="AI Voice Avatar"
+                  [src]="image"
+              /></span>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-features />
+  <app-emotion-support />
+  <app-unlock-features />
+  <app-try-app />
+  <app-working-steps />
+  <app-testimonials />
+  <app-api-studio />
+  <app-faqs />
+</main>
+<app-footer />
