@@ -14,24 +14,24 @@
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
         <a
-          href="#features"
-          class="text-muted-foreground transition-colors hover:text-foreground"
+          (click)="navigateToSection('features')"
+          class="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >Features</a
         ><a
           routerLink="/pricing"
           class="text-muted-foreground transition-colors hover:text-foreground"
           >Pricing</a
         ><a
-          href="#studio"
-          class="text-muted-foreground transition-colors hover:text-foreground"
+          (click)="navigateToSection('studio')"
+          class="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >Studio</a
         ><a
           routerLink="/api-docs"
           class="text-muted-foreground transition-colors hover:text-foreground"
           >API</a
         ><a
-          href="#faq"
-          class="text-muted-foreground transition-colors hover:text-foreground"
+          (click)="navigateToSection('faq')"
+          class="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >FAQ</a
         >
       </nav>

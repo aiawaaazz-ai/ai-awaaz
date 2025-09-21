@@ -1,3 +1,5 @@
+<audio #audioPlayer src=""></audio>
+
 <section id="demo" class="py-20 sm:py-24">
   <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
@@ -21,9 +23,10 @@
               hlmInput
               placeholder="Enter some text to generate speech..."
               rows="2"
-              [(ngModel)]="text"
+              [(ngModel)]="selectedVoice.text"
               name="text"
               maxlength="100"
+              readonly
             >
 Hello, welcome to AI Awaaz. Experience the future of voice technology.
         </textarea
@@ -32,39 +35,41 @@ Hello, welcome to AI Awaaz. Experience the future of voice technology.
               <hlm-select
                 class="inline-block"
                 placeholder="Select an option"
-                [(value)]="language"
+                [(value)]="selectedLanguage"
                 scrollable="true"
-                id="emotion"
+                id="language"
+                (valueChange)="selectedVoice = voices[selectedLanguage.locale][0]"
               >
                 <hlm-select-trigger class="w-full">
                   <hlm-select-value />
                 </hlm-select-trigger>
                 <hlm-select-content class="max-h-92">
                   <hlm-select-scroll-up />
-                  @for(emotion of languages; track emotion){
-                  <hlm-option [value]="emotion">{{ emotion }}</hlm-option> }
+                  @for(language of languages; track language){
+                  <hlm-option [value]="language">{{ language.language }}</hlm-option> }
                   <hlm-select-scroll-down />
                 </hlm-select-content>
               </hlm-select>
               <hlm-select
                 class="inline-block"
                 placeholder="Select an option"
-                [(value)]="voice"
+                [(value)]="selectedVoice"
                 scrollable="true"
-                id="emotion"
+                id="voice"
+
               >
                 <hlm-select-trigger class="w-full">
                   <hlm-select-value />
                 </hlm-select-trigger>
                 <hlm-select-content class="max-h-92">
                   <hlm-select-scroll-up />
-                  @for(emotion of voices; track emotion){
-                  <hlm-option [value]="emotion">{{ emotion }}</hlm-option> }
+                  @for(voice of voices[selectedLanguage.locale]; track voice){
+                  <hlm-option [value]="voice">{{ voice.display_name }}</hlm-option> }
                   <hlm-select-scroll-down />
                 </hlm-select-content>
               </hlm-select>
             </div>
-            <button hlmBtn class="w-full">
+            <button hlmBtn class="w-full" (click)="playAudio(audioPlayer, selectedVoice)">
               <ng-icon name="lucidePlay" class="mr-2"></ng-icon>
               Generate &amp; Play
             </button>

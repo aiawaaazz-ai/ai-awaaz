@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import {About} from './features/about/about';
 
 export const routes: Routes = [
   {
     path: 'about',
-    component: About,
+    loadComponent: () => import('./features/about/about').then((m) => m.About),
     title: 'About',
   },
   {

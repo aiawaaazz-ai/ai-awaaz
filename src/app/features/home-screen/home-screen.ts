@@ -11,7 +11,7 @@ import { WorkingSteps } from './working-steps/working-steps';
 import { Testimonials } from './testimonials/testimonials';
 import { Faqs } from './faqs/faqs';
 import { ApiStudio } from './api-studio/api-studio';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { EmotionSupport } from './emotion-support/emotion-support';
 
 @Component({
@@ -36,6 +36,9 @@ import { EmotionSupport } from './emotion-support/emotion-support';
   providers: [provideIcons({ lucideArrowRight })],
 })
 export class HomeScreen {
+
+  constructor(private router: Router) {}
+
   usersImage: string[] = [
     'https://randomuser.me/api/portraits/women/44.jpg',
     'https://randomuser.me/api/portraits/men/32.jpg',
@@ -48,4 +51,13 @@ export class HomeScreen {
     'https://randomuser.me/api/portraits/women/1.jpg',
     'https://randomuser.me/api/portraits/men/1.jpg',
   ];
+
+   navigateToSection(sectionId: string) {
+    this.router.navigate([`/`]).then(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
 }
